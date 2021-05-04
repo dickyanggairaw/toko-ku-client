@@ -1,7 +1,8 @@
 const initialState = {
   isLoading: false,
   error: null,
-  products: []
+  products: [],
+  product: {}
 }
 
 function productReducer (state = initialState, action) {
@@ -12,6 +13,8 @@ function productReducer (state = initialState, action) {
     return {...state, error: payload}
   }else if(type === 'products/setproducts'){
     return {...state, products: payload}
+  }else if(type === 'product/setproduct'){
+    return {...state, product: payload}
   }
   return state
 }
